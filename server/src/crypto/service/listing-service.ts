@@ -20,10 +20,10 @@ export class ListingService {
                     market_cap_max: number, volume_24h_min: number, volume_24h_max: number, circulating_supply_min: number, circulating_supply_max: number,
                     percent_change_24h_min: number,
                     percent_change_24h_max: number,
-                    convert: string) {
+                    convert: string, convert_id: string, sort: string, sort_dir: string, cryptocurrency_type: string, tag: string, aux: string) {
     let url = this.constructUrl(start, limit, price_min, price_max,
         market_cap_min, market_cap_max, volume_24h_min, volume_24h_max, circulating_supply_min, circulating_supply_max,
-        percent_change_24h_min, percent_change_24h_max, convert);
+        percent_change_24h_min, percent_change_24h_max, convert, convert_id, sort, sort_dir, cryptocurrency_type, tag, aux);
     let axiosResponse = await this.httpService.get(
         url,
         {
@@ -45,7 +45,7 @@ export class ListingService {
                market_cap_max: number, volume_24h_min: number, volume_24h_max: number, circulating_supply_min: number, circulating_supply_max: number,
                percent_change_24h_min: number,
                percent_change_24h_max: number,
-               convert: string) {
+               convert: string, convert_id: string, sort: string, sort_dir: string, cryptocurrency_type: string, tag: string, aux: string) {
     let url = this.configService.get("MKT_SVC_BASE_URL") + '/v1/cryptocurrency/listings/latest?';
     if (start !== undefined) {
       url += 'start=' + start + '&';
@@ -85,6 +85,25 @@ export class ListingService {
     }
     if (convert !== undefined) {
       url += 'convert=' + convert + '&';
+    }
+    if (convert_id !== undefined) {
+      url += 'convert_id=' + convert_id + '&';
+    }
+    if (sort !== undefined) {
+      url += 'sort=' + sort + '&';
+    }
+
+    if (sort_dir !== undefined) {
+      url += 'sort_dir=' + sort_dir + '&';
+    }
+    if (cryptocurrency_type !== undefined) {
+      url += 'cryptocurrency_type=' + cryptocurrency_type + '&';
+    }
+    if (tag !== undefined) {
+      url += 'tag=' + tag + '&';
+    }
+    if (aux !== undefined) {
+      url += 'aux=' + aux + '&';
     }
     return url;
   }

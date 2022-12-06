@@ -16,7 +16,7 @@ Installing MongoDB using Docker
 http://localhost:8080/swagger
 
 # Monitor Api server status:
-http://localhost:4000/metrics/ux#/
+http://localhost:8080/metrics/ux#/
 
 ![Alt text](../server/docs/metrics-1.png?raw=true "Metrics 1")
 
