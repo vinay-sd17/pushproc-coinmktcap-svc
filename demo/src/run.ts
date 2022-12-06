@@ -1,6 +1,6 @@
-import Typicode from "pushproc-coinmktcap-client";
+import PushProcCoinMktCapClient from "pushproc-coinmktcap-client";
 
-const client: Typicode = new Typicode({
+const client: PushProcCoinMktCapClient = new PushProcCoinMktCapClient({
   apiKey: "PUSH-API-123",
 });
 

@@ -1,10 +1,13 @@
-import { Base } from "./base";
-import { applyMixins } from "./utils";
+import {Base} from "./base";
+import {applyMixins} from "./utils";
 import {Cryptos} from "./cryptos";
 
-class Typicode extends Base {}
-interface Typicode extends Cryptos {}
+class PushProcCoinMktCapClient extends Base {
+}
 
-applyMixins(Typicode, [Cryptos]);
+interface PushProcCoinMktCapClient extends Cryptos {
+}
 
-export default Typicode;
+applyMixins(PushProcCoinMktCapClient, [Cryptos]);
+
+export default PushProcCoinMktCapClient;
