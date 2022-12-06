@@ -13,3 +13,17 @@ PushProc CoinMarketCap Client: A library module, which can be included in any mi
 
 # Demo:
 Sample application: Which included "PushProc CoinMarketCap Client" and making call to Crypto Listings API to fetch data
+
+# Procedure to Bootstrap/Test:
+
+1. Start pushproc-coinmktcap Server 
+   1. cd server 
+   2. npm start
+2. Start Demo App
+   1. cd demo 
+   2. tsc 
+   3. npm start
+
+
+
+

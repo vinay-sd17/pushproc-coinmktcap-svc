@@ -10,8 +10,6 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "dev-env-setup-windows": "copy env/dev.env .env",
-    "prod-env-setup-windows": "copy env/prod.env .env",
     "dev-env-setup": "cp env/dev.env .env",
     "prod-env-setup": "cp env/prod.env .env",
     "prebuild": "rm -rf dist",

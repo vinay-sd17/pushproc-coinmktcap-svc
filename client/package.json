@@ -1,7 +1,7 @@
 {
   "name": "pushproc-coinmktcap-client",
   "version": "1.0.4",
-  "description": "",
+  "description": "pushproc-coinmktcap-client application",
   "main": "dist/index.js",
   "module": "dist/index.m.js",
   "unpkg": "dist/index.umd.js",
@@ -15,7 +15,6 @@
     "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
     "tsc": "npm run tsc -w --no-initial-compille"
   },
-  "keywords": [],
   "author": "Vinay S",
   "devDependencies": {
     "microbundle": "0.15.0"
