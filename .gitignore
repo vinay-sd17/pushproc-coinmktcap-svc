@@ -1,7 +1,6 @@
 # compiled output
-/server/dist
-/node_modules
-/server/node_modules
+**/dist
+**/node_modules
 
 # Logs
 logs

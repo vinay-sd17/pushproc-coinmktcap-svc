@@ -8,7 +8,7 @@ import {GlobalExceptionHandler} from "./common/exception/global-exception-handle
 const swStats = require('swagger-stats');
 
 async function bootstrap() {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] || 8080;
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   //Added req res logger middleware

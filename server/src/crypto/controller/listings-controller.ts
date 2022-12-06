@@ -7,6 +7,8 @@ import {
   Req
 } from "@nestjs/common";
 import {ListingService} from "../service/listing-service";
+import {mapToResponse} from "../../common/utils";
+import {Status} from "../../common/status";
 
 @Controller('api/crypto')
 @ApiBearerAuth('JWT')
@@ -34,7 +36,7 @@ export class ListingsController {
   @ApiQuery({name: 'convert', required: false})
   async findAllForListPage(
       @Query('start') start: number,
-      @Query('limit') limit: number = 100,
+      @Query('limit') limit: number,
       @Query('price_min') price_min: number,
       @Query('price_max') price_max: number,
       @Query('market_cap_min') market_cap_min: number,
@@ -45,15 +47,16 @@ export class ListingsController {
       @Query('circulating_supply_max') circulating_supply_max: number,
       @Query('percent_change_24h_min') percent_change_24h_min: number,
       @Query('percent_change_24h_max') percent_change_24h_max: number,
-      @Query('convert') convert: string = "",
+      @Query('convert') convert: string,
       @Req() request) {
     try {
       let axiosResponse = await this.listingService.getListings(start, limit, price_min, price_max, market_cap_min, market_cap_max, volume_24h_min, volume_24h_max, circulating_supply_min,
           circulating_supply_max, percent_change_24h_min, percent_change_24h_max, convert);
-      console.log(axiosResponse);
+      return mapToResponse(axiosResponse.data.data, false, Status.SUCCESS);
     } catch (e) {
-      console.log(e)
+      return mapToResponse({
+        message: "Error while processing request"
+      }, true, Status.FAILURE);
     }
-
   }
 }
