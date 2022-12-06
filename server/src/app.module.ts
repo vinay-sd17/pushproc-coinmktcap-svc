@@ -8,7 +8,7 @@ import {CryptoModule} from "./crypto/crypto.module";
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(ormconfig[0]),
+    // TypeOrmModule.forRoot(ormconfig[0]),
     ConfigModule.forRoot({isGlobal: true}),
     CryptoModule
   ],
